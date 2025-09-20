@@ -1,111 +1,99 @@
 body {
-  font-family: 'Inter', sans-serif; 
-  background-color: #241c1c; 
-  color: #333; 
+  font-family:'Courier New', Courier, monospace; /* CAMBIO FUENTE */
+  background-color: #161010; /*CAMBIO COLOR*/
+  color: #fafafa; /* Color de texto oscuro */
   line-height: 1.6;
   margin: 0;
   padding: 0;
 }
 
 header {
-  background-color: #251010; 
-  color: #c24f4f; 
+  background-color: #200112; /* CAMBIO COLOR */
+  color: #ecf0f1; /* Texto claro */
   padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(41, 33, 33, 0.295);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   width: 100%;
 }
 
+/* Contenedor dentro del encabezado para centrar y espaciar */
 header > div {
-  display: grid;
-  grid-template-columns: 1fr auto; /* titulo ocupa espacio flexible, nav lo que necesite */
-  align-items: center;
-  gap: 1rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  padding: 1rem;
 }
+
 h1 {
-  color: #fdfbfb;
-  font-size: 1.8rem;
-  font-weight: lighter;
-  margin: 0;
-  background-color: #777777; 
-  border-radius: 0.5rem;    
-  padding: 0.75rem 1.5rem; 
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  max-width: fit-content;
+  font-family:fantasy; /* OTRA FUENTE PARA EL H1 */
+  font-size: 4rem; /* Tamaño de fuente para h1 */
+  font-weight:lighter; /* CAMBIE A LETRA SIN GROSOR */ 
+  margin: 0; /* Eliminar margen por defecto del h1 */
+  color: #3498db; /* AGREGO COLOR AL TITULO */
 }
+
+/* Menú de navegación */
 nav {
   flex-direction: column;
   width: 100%;
-  background-color: transparent; 
-  box-shadow: none;
+  background-color: #34495e; /* Fondo para el menú desplegado */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   z-index: 999;
-  border-radius: 0;
-  overflow: visible;
+  border-radius: 0.75rem 0.75rem 0.75rem 0.75rem; /* TODOS LOS BORDES REDONDOS */
+  overflow: hidden; /* Para que los bordes redondeados se apliquen bien */
 }
+
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /*LO HICE ROW*/
   width: 100%;
-  justify-content: center; 
-  gap: 1rem; 
 }
+
 nav li {
-  margin: 0;
-  width: auto; 
+  /*LE SAQUE EL MARGIN BOTTOM*/
+  width: 100%;
 }
+
 nav a {
-  display: block;
-  padding: 0.75rem 1.5rem;
-  color: #fdfbfb;
+  display:inline-block;
+  padding: 0.20rem; /* PADDING BAJO PARA TODOS LADOS IGUAL*/
+  color: #ffffff;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
   text-align: center;
-  width: auto;
-  box-sizing: border-box;
-  border-radius: 0.5rem;
-  background-color: #777777; 
+  width: 100%;
+  box-sizing: border-box; /* Incluye relleno y borde en el ancho */
 }
 
 nav a:hover, nav a:focus {
-  background-color: #8a5252;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #2980b9; /* Un tono más oscuro al pasar el ratón */
+  border-radius: 0.5rem;
 }
-@media (max-width: 600px) {
-  header > div {
-    grid-template-columns: 1fr; /* solo una columna */
-    text-align: center;
-  }
 
-  nav ul {
-    flex-direction: column; /* el menú se apila */
-    gap: 0.5rem;
-  }
-}
 main {
   padding: 1rem;
   max-width: 1200px;
   margin: 2rem auto;
+    /* Margen superior e inferior para separar del encabezado y del pie de
+     * página */
 }
 
 section {
-  background-color: #38363b;
+  background-color: #3d3d3d; /*CAMBIO COLOR FONDO*/
   border-radius: 0.75rem;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  box-shadow:0px 0px 10px rgba(255, 255, 255, 0.4);   /*MAS EFECTO SOMBRA COLOR Y BLUR*/
 }
 
 article {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #413d3d;
+  border-bottom: 1px solid #eee;
 }
 
 article:last-child {
@@ -113,59 +101,29 @@ article:last-child {
 }
 
 h2 {
-  font-size: 1.5rem; 
-  font-weight: 600;
-  color: #d47202; 
+  font-family: 'Times New Roman', Times, serif; /*OTRA FUENTE SIMILAR PERO CON UN TOQUE DISTINTO*/
+  font-size: 1.5rem; /* Tamaño de fuente para h2 */
+  color: #92ff03; /*CAMBIO COLOR*/
+  font-weight: bolder; /*PONGO VERSION GROSOR*/
   margin-top: 0;
   margin-bottom: 1rem;
-  text-align: center;
-  margin-bottom: 10px;
-}
-.intro {
-  background-color: #2e2e2e;
-  color: #fdfdfd;
-  padding: 2rem 3rem;  
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  max-width: 800px;
-  margin: 2rem auto;
-  line-height: 1.5;  
+  text-align: center; /*CENTRE EL TITULO*/
 }
 
-.intro h2 {
-  color: #d47202;             
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.intro p {
-  font-size: 1rem;
-  color: #e0e0e0;          
-}
 h3 {
-  font-size: 1.25rem; 
+  font-size: 1.25rem; /* Tamaño de fuente para h3 */
   font-weight: 500;
-  color: #d8db05; 
+  text-align: center; /*TITULO AL CENTRO*/
+  color: #02ff17; /*TITULO DE TIPO DE MOTO QUE RESALTE*/
   margin-top: 0;
   margin-bottom: 0.5rem;
-  text-align: center;
-}
-li{
-  color: #ffffff;
-}
-
-h4{
-  color: #ffffff;
-  text-align: center;
-}
-h5{
-  color: #ffffff;
 }
 
 p {
+  font-family:sans-serif;/*OTRA FUENTE SIMILAR*/
+  text-align: center; /*CENTRO EL TEXTO DEL P */
   margin-bottom: 1rem;
-  color: #fcf4f4; 
+  color: #f8f7f7; /*OTRO COLOR PARA Q RESALTE DEL FONDO*/
 }
 
 img {
@@ -177,70 +135,25 @@ img {
 }
 
 a {
-  color: #d8db05; 
+  color: #d9e900; /*CAMBIO COLOR*/
   text-decoration: none;
-  text-align: center;
-  font-size: 13px;
+  font-weight: bolder;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 footer {
-  background-color: #291212;
-  color: #111010;
+  background-color: #000000;
+  color: #ecf0f1;
   text-align: center;
-  padding: 1rem 0;
+  padding: 0.50rem 0;
   margin-top: 2rem;
   width: 100%;
 }
 
 footer p {
   margin: 0;
-  color: #fcfcfc;
-}
-.caja-modelo-completo {
-  width: 250px;          
-  height: 400px; 
-  background: #2c2c2c;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-  padding: 1rem;
-  max-width: 280px;
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.caja-motosgral {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  margin: auto;
-  padding: 1rem;
-}
-.caja-modelo-completo:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
-}
-.caja-modelo-completo img {
-  height: 180px; 
-  object-fit: cover; 
-}
-.caja-modelo-completo h4 {
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
-.caja-modelo-completo ul {
-  list-style: none;
-  padding: 0;
-  margin: 0.5rem 0;
-}
-.caja-modelo-completo a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  font-weight: bold;
-  font-size: 0.85rem;
-  color: #d8db05;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-.caja-modelo-completo a:hover {
-  color: #ffff66;
+  color: #ecf0f1;
 }
