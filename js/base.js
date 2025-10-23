@@ -18,4 +18,14 @@ document.addEventListener( 'DOMContentLoaded' , () => {
       mainNav.classList.remove( 'nav-open' ) ;
     }
   } ) ;
+   // Ajusta el menú al cambiar el tamaño de la ventana (para pantallas grandes)
+  window.addEventListener( 'resize' , () => {
+    if( window.innerWidth >= 768 ) { // Si es pantalla grande
+      mainNav.classList.remove( 'nav-open' ) ;
+      // Asegura que no tenga la clase nav-open
+      hamburgerButton.setAttribute('aria-expanded', 'false') ;
+    }
+    // En pantallas pequeñas, el estado del menú se maneja solo con el clic
+    // del botón
+  } ) ;
 } ) ;
