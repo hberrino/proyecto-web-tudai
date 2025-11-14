@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VotaYa - Mototops Rank</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/data.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>MOTO Ranking </h1>
+      <button class="hamburger-menu"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        &#9776; <!-- Icono de hamburguesa -->
+      </button>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="deportiva.html">Deportiva</a></li>
+          <li><a href="offroad.html">Off Road</a></li>
+          <li><a href="naked.html">Naked Sport</a></li>
+          <li><a href="cross.html">Cross</a></li>
+          <li><a href="MotoEstelar.html">Moto Estrella</a></li>
+          <li><a href="votaRank.html">VotarYa</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="votarank-main votarank-grid">
+    <section>
+      <h2>Moto Preferida</h2>
+      <form id="data-form">
+        <label for="item-brand">Marca: </label>
+        <input type="text" id="item-brand" placeholder="Marca ej.: honda" required> 
+        <label for="item-model">Modelo:</label>
+        <input type="text" id="item-model" placeholder="Modelo ej.: cb300" required>
+        <label for="item-puntaje">Puntaje:</label>
+        <input type="number" id="item-puntaje" placeholder="Puntaje 1-10 ej.: 7" required>  
+        <button type="submit" id="add-item-btn" class="add-btn">
+          Agregar Moto
+        </button>
+        <button type="submit" id="update-item-btn" class="update-btn">
+          Actualizar Moto
+        </button>
+        <button type="reset" class="cancel-btn">
+          Cancelar
+        </button>
+      </form>
+      <div id="status-message" class="hidden">Mensaje a mostrar</div>
+    </section>
+    <section>
+      <h2>Motos Ingresadas</h2>
+      <div class="table-responsive">
+      <table id="data-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Puntaje</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+      </table>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div>
+      <p>&copy; 2025 Mototops blog.</p>
+    </div>
+  </footer>
+  <div id="confirmation-modal" class="modal">
+    <div class="modal-content">
+      <h3>¿Está seguro de que desea eliminar este elemento?</h3>
+      <div class="modal-buttons">
+        <button class="confirm-btn">Sí, eliminar</button>
+        <button class="cancel-btn">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  <script src="../js/base.js"></script>
+  <script src="../js/data.js"></script>
+</body>
+</html>
