@@ -253,4 +253,16 @@ form button.cancel-btn:hover {
     margin: 0;
   }
 }
+#loading-indicator, #status-message {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+#loading-indicator {
+  color: #b34100;
+  background-color: #87888a;
+}
 
