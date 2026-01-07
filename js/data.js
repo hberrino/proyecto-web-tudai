@@ -17,12 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let editingItemId = null;
   let itemToDeleteId = null;
 
-  // 🔥 TU ENDPOINT REAL
-  const API_BASE_URL = "https://69176647a7a34288a280a06a.mockapi.io/api/v1/motos";
+  const API_BASE_URL = "https://695eb67f2556fd22f6792fbc.mockapi.io/motos";
 
-  // =============================
-  // FUNCIONES AUXILIARES
-  // =============================
 
   function showMessage(el, msg, type = "error") {
     el.textContent = msg;
@@ -61,10 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateItemBtn.style.display = "none";
   }
 
-  // =============================
-  // RENDER TABLA
-  // =============================
-
   function renderTable(data) {
     tableBody.innerHTML = "";
 
@@ -88,11 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
         row.appendChild(td);
       });
 
-      // acciones
+ 
       const actions = document.createElement("td");
       actions.classList.add("table-actions");
 
-      // editar
+   
       const edit = document.createElement("button");
       edit.classList.add("edit-btn");
       edit.textContent = "Editar";
@@ -104,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       actions.appendChild(edit);
 
-      // eliminar
+ 
       const del = document.createElement("button");
       del.classList.add("delete-btn");
       del.textContent = "Eliminar";
@@ -119,10 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // =============================
-  // CARGAR DATOS (GET)
-  // =============================
-
+ 
   async function loadData() {
     loadingIndicator.classList.remove("hidden");
 
@@ -137,9 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // =============================
-  // AGREGAR / EDITAR
-  // =============================
 
   dataForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -193,10 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   dataForm.addEventListener("reset", resetEditingItem);
 
-  // =============================
-  // ELIMINAR
-  // =============================
-
   confirmDeleteBtn.addEventListener("click", async () => {
     confirmationModal.style.display = "none";
 
@@ -226,10 +208,6 @@ document.addEventListener('DOMContentLoaded', () => {
     confirmationModal.style.display = "none";
     itemToDeleteId = null;
   });
-
-  // =============================
-  // CARGA INICIAL
-  // =============================
 
   loadData();
 });
